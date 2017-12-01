@@ -1,9 +1,29 @@
-function onReady(); {
+function onReady() {
   const addToDoForm = document.getElementById('addToDoForm');
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
+  const deleteChecked = document.getElementById('deleteChecked');
 
-  addToDoForm.addEventListener('submit', () => {
+  deleteChecked.addEventListener('click', () => {
+    toDoList = remove(newToDoText.id);
+    renderTheUI();
+  });
+// }
+
+      //node.parentNode.removeChild(node);
+      //console.log(deleteChecked);
+      // Grab all checkboxes, loop over each one, and see if it is checked.
+      // If it is NOT checked, do nothing with it.
+      // If it IS checked, we need to remove its parent <li> from the <ul>.
+      // Hints:
+      //  .checked (boolean) property on checkbox elements
+      //  .parentElement (HTMLElement) property on all elements
+      //  Google how to remove child element (li) from a parent (ul) in JavaScript
+//  }, false);
+
+
+
+  addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
     //get the text
@@ -30,8 +50,9 @@ function onReady(); {
     //empty the input
     newToDoText.value = '';
   });
-};
+}
 
 
 window.onload = function() {
+  onReady();
 }
