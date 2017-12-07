@@ -18,7 +18,7 @@ function onReady() {
      renderTheUI();
    }
 
-   function remove(id){
+   function deleteToDo(id){
      return toDos.filter(toDo => toDo.id !== id);
    }
 
